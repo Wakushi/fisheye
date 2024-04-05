@@ -8,6 +8,13 @@
       href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Fisheye - photographe</title>
   </head>
   <body>
@@ -18,33 +25,78 @@
     </header>
     <main id="main">
       <!-- HEADER -->
-      <div class="photograph-header">
-        <div class="photographer-card details"></div>
-        <button class="contact_button" onclick="displayModal()">
+      <div aria-label="Photographer header" class="photographer-header">
+        <div
+          aria-label="Photographer details"
+          class="photographer-card details"
+        ></div>
+        <button
+          aria-label="Contact button"
+          class="contact_button"
+          onclick="displayModal()"
+        >
           Contactez-moi
         </button>
-        <div class="photographer-portrait">
+        <div
+          aria-label="Photographer portrait container"
+          class="photographer-portrait"
+        >
           <img id="photographer-portrait" alt="Photographer's picture" />
         </div>
       </div>
       <!-- FILTER -->
-      <div></div>
+      <div
+        class="filter-container"
+        aria-label="Portfolio media filter container"
+      >
+        <label id="filterLabel" for="filter">Trier par</label>
+        <ul
+          role="listbox"
+          class="filter"
+          aria-expanded="false"
+          aria-labelledby="filterLabel"
+        >
+          <li
+            role="button"
+            aria-haspopup="listbox"
+            id="selected-option"
+            class="filter-option"
+          >
+            <span class="option-content">Popularité</span>
+            <i class="fas fa-chevron-down"></i>
+          </li>
+          <li class="filter-option">
+            <span class="option-content">Date</span>
+          </li>
+          <li class="filter-option">
+            <span class="option-content">Titre</span>
+          </li>
+        </ul>
+      </div>
       <!-- MEDIA -->
-      <div class="photographer-pictures"></div>
+      <div
+        aria-label="Portfolio media list"
+        class="photographer-pictures"
+      ></div>
     </main>
     <!-- MODAL -->
-    <div id="contact_modal">
-      <div class="modal">
+    <div aria-label="Contact modal container" id="contact_modal">
+      <div aria-label="Contact modal" class="modal">
         <header>
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
         <form>
-          <div>
+          <div aria-label="Contact form container">
             <label>Prénom</label>
             <input />
           </div>
-          <button class="contact_button">Envoyer</button>
+          <button
+            aria-label="Contact form submit button"
+            class="contact_button"
+          >
+            Envoyer
+          </button>
         </form>
       </div>
     </div>
