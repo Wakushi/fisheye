@@ -2,36 +2,53 @@
 <html>
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Fisheye - photographe</title>
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <a class="logo" href="./index.html">
+        <img src="assets/images/logo.png" alt="Fisheye Home page" />
+      </a>
     </header>
     <main id="main">
+      <!-- HEADER -->
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <div class="photographer-card details"></div>
+        <button class="contact_button" onclick="displayModal()">
+          Contactez-moi
+        </button>
+        <div class="photographer-portrait">
+          <img id="photographer-portrait" alt="Photographer's picture" />
+        </div>
       </div>
+      <!-- FILTER -->
+      <div></div>
+      <!-- MEDIA -->
+      <div class="photographer-pictures"></div>
     </main>
+    <!-- MODAL -->
     <div id="contact_modal">
-			<div class="modal">
-				<header>
+      <div class="modal">
+        <header>
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
+        <form>
+          <div>
+            <label>Prénom</label>
+            <input />
+          </div>
           <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="/scripts/pages/photographer.js"></script>
+    <script type="module" src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>
