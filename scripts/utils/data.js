@@ -11,15 +11,15 @@ async function getPhotographerById(id) {
   return photographers.find((photographer) => photographer.id == id)
 }
 
-async function getPortfolioPictures() {
+async function getMedias() {
   const response = await fetch(`${BASE_URL}/data/photographers.json`)
   const { media } = await response.json()
   return media
 }
 
-async function getPhotographerPictures(id) {
-  const pictures = await getPortfolioPictures()
+async function getPhotographerMedias(id) {
+  const pictures = await getMedias()
   return pictures.filter((picture) => picture.photographerId == id)
 }
 
-export { getPhotographers, getPhotographerById, getPhotographerPictures }
+export { getPhotographers, getPhotographerById, getPhotographerMedias }

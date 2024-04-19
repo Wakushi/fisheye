@@ -48,6 +48,7 @@
       <div
         class="filter-container"
         aria-label="Portfolio media filter container"
+        tabindex="0"
       >
         <label id="filterLabel" for="filter">Trier par</label>
         <ul
@@ -78,8 +79,54 @@
         aria-label="Portfolio media list"
         class="photographer-pictures"
       ></div>
+      <!-- LIKE COUNTER & TJM -->
+      <div
+        class="like-counter-container"
+        aria-label="Like counter and daily price container"
+      >
+        <div aria-label="Like counter container">
+          <span aria-label="Total likes" id="totalLikes"></span>
+          <i class="fas fa-heart"></i>
+        </div>
+        <div>
+          <span aria-label="Daily price" id="dailyPrice"></span
+          ><span aria-label="Daily price currency">€ / jour</span>
+        </div>
+      </div>
     </main>
-    <!-- MODAL -->
+    <!-- LIGHTBOX MODAL -->
+    <div
+      aria-label="Lightbox modal container"
+      id="lightboxModalContainer"
+      class="lightbox-modal-container"
+    >
+      <div aria-label="Lightbox modal" class="lightbox-modal">
+        <i
+          aria-label="Lightbox modal closing button"
+          id="closeLightbox"
+          class="fa-solid fa-xmark lightbox-close"
+        ></i>
+        <i
+          id="lightboxLeftArrow"
+          aria-label="Lightbox modal navigation left arrow"
+          class="fa-solid fa-angle-left"
+        ></i>
+
+        <div id="lightboxMediaContainer" class="lightbox-media-container">
+          <img
+            id="lightboxMedia"
+            src="./assets/images/Marcel/Architecture_On_a_hill.jpg"
+            alt="Media"
+          />
+        </div>
+        <i
+          id="lightboxRightArrow"
+          aria-label="Lightbox modal navigation right arrow"
+          class="fa-solid fa-angle-right"
+        ></i>
+      </div>
+    </div>
+    <!-- CONTACT MODAL -->
     <div aria-label="Contact modal container" id="contact_modal">
       <div aria-label="Contact modal" class="modal">
         <header>

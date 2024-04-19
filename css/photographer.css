@@ -137,6 +137,69 @@ header > .logo {
   color: #901c1c;
 }
 
+.fa-heart[aria-pressed="true"] {
+  color: #901c1c;
+}
+
+.like-counter-container {
+  position: fixed;
+  bottom: 0;
+  right: 50px;
+  background-color: #db8876;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  gap: 2rem;
+  border-radius: 0.3rem 0.3rem 0 0;
+  font-size: 1.5rem;
+}
+
+/* LIGHTBOX MODAL */
+
+.lightbox-modal-container {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-modal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between;
+  width: 90%;
+  height: 90%;
+  border-radius: 5px;
+  padding: 35px;
+}
+
+.lightbox-modal > i {
+  color: #901c1c;
+  font-size: 3rem;
+}
+
+.lightbox-close {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 2rem;
+}
+
+.lightbox-media-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* CONTACT MODAL */
+
 .modal {
   border-radius: 5px;
   background-color: #db8876;
