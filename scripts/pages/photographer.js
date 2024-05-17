@@ -25,6 +25,11 @@ class PortfolioPage {
     document.addEventListener("computeTotalLikes", () =>
       this.renderTotalLikes()
     )
+
+    document.addEventListener("closeLightbox", (event) => {
+      const mediaContainer = document.getElementById(event.detail)
+      mediaContainer.focus()
+    })
   }
 
   get totalLikes() {

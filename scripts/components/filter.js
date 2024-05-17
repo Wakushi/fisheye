@@ -10,32 +10,78 @@ export class FilterComponent {
   }
 
   bindFilterEvents() {
-    this.selectedOptionElement.addEventListener("click", () =>
-      this.toggleListbox()
-    )
-    const options = this.filterListElement.querySelectorAll(".option-content")
+    const options = this.filterListElement.querySelectorAll(".filter-option")
     options.forEach((optionElement) => {
       optionElement.addEventListener("click", () =>
         this.selectOption(optionElement)
       )
+      optionElement.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          this.selectOption(optionElement)
+        }
+      })
+
+      optionElement.addEventListener("focusout", () => {
+        setTimeout(() => {
+          document.body.style.overflow = "auto"
+        })
+      })
+
+      optionElement.addEventListener("keydown", (event) => {
+        const isExpanded =
+          this.filterListElement.getAttribute("aria-expanded") === "true"
+
+        if (!isExpanded) {
+          return
+        }
+
+        document.body.style.overflow = "hidden"
+
+        if (event.key === "ArrowDown") {
+          const nextOptionElement = optionElement.nextElementSibling
+          if (nextOptionElement) {
+            nextOptionElement.focus()
+            return
+          }
+        }
+        if (event.key === "ArrowUp") {
+          const previousOptionElement = optionElement.previousElementSibling
+          if (previousOptionElement) {
+            previousOptionElement.focus()
+            return
+          }
+        }
+      })
     })
   }
 
   toggleListbox() {
     const isExpanded =
       this.filterListElement.getAttribute("aria-expanded") === "true"
+    this.toggleOptionsTabindex(!isExpanded)
     this.filterListElement.setAttribute("aria-expanded", !isExpanded)
     this.chevron.className = isExpanded
       ? "fas fa-chevron-down"
       : "fas fa-chevron-up"
   }
 
+  toggleOptionsTabindex(isExpanded) {
+    const filterOptionElements = this.filterListElement.querySelectorAll(
+      ".filter-option:not(#selected-option)"
+    )
+    filterOptionElements.forEach((optionElement) => {
+      const tabindexValue = isExpanded ? "0" : "-1"
+      optionElement.setAttribute("tabindex", tabindexValue)
+    })
+  }
+
   selectOption(clickedOptionElement) {
     const selectedOptionElementContent =
       this.selectedOptionElement.querySelector(".option-content")
-    const clickedOptionLabel = clickedOptionElement.textContent
+    const clickedOptionLabel =
+      clickedOptionElement.querySelector(".option-content").textContent
     const oldLabel = selectedOptionElementContent.textContent
-    clickedOptionElement.textContent = oldLabel
+    clickedOptionElement.querySelector(".option-content").textContent = oldLabel
     selectedOptionElementContent.textContent = clickedOptionLabel
     this.selectedOptionValue = clickedOptionLabel.toLowerCase()
     this.toggleListbox()

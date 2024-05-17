@@ -48,7 +48,6 @@
       <div
         class="filter-container"
         aria-label="Portfolio media filter container"
-        tabindex="0"
       >
         <label id="filterLabel" for="filter">Trier par</label>
         <ul
@@ -62,14 +61,15 @@
             aria-haspopup="listbox"
             id="selected-option"
             class="filter-option"
+            tabindex="0"
           >
             <span class="option-content">Popularité</span>
             <i class="fas fa-chevron-down"></i>
           </li>
-          <li class="filter-option">
+          <li class="filter-option" tabindex="-1">
             <span class="option-content">Date</span>
           </li>
-          <li class="filter-option">
+          <li class="filter-option" tabindex="-1">
             <span class="option-content">Titre</span>
           </li>
         </ul>
@@ -104,14 +104,15 @@
         <i
           aria-label="Lightbox modal closing button"
           id="closeLightbox"
+          tabindex="0"
           class="fa-solid fa-xmark lightbox-close"
         ></i>
         <i
           id="lightboxLeftArrow"
           aria-label="Lightbox modal navigation left arrow"
           class="fa-solid fa-angle-left"
+          tabindex="0"
         ></i>
-
         <div id="lightboxMediaContainer" class="lightbox-media-container">
           <img
             id="lightboxMedia"
@@ -123,6 +124,7 @@
           id="lightboxRightArrow"
           aria-label="Lightbox modal navigation right arrow"
           class="fa-solid fa-angle-right"
+          tabindex="0"
         ></i>
       </div>
     </div>

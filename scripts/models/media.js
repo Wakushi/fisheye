@@ -31,5 +31,18 @@ export class Media {
     })
     const likeBtn = document.getElementById(`likeBtn-${this.id}`)
     likeBtn.addEventListener("click", () => this.toggleLike(likeBtn))
+    likeBtn.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        this.toggleLike(likeBtn)
+      }
+    })
+    mediaContainer.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        const openLightboxEvent = new CustomEvent("openLightbox", {
+          detail: this.id,
+        })
+        document.dispatchEvent(openLightboxEvent)
+      }
+    })
   }
 }
