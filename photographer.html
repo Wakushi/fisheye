@@ -32,8 +32,8 @@
         ></div>
         <button
           aria-label="Contact button"
-          class="contact_button"
-          onclick="displayModal()"
+          id="contactButton"
+          class="custom-button"
         >
           Contactez-moi
         </button>
@@ -129,27 +129,42 @@
       </div>
     </div>
     <!-- CONTACT MODAL -->
-    <div aria-label="Contact modal container" id="contact_modal">
-      <div aria-label="Contact modal" class="modal">
-        <header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
+    <div
+      id="contactModal"
+      class="modal"
+      role="dialog"
+      aria-labelledby="modalTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-content">
+        <button
+          class="close-button"
+          aria-label="Close modal"
+          id="closeContactModal"
+        >
+          <img src="assets/icons/close.svg" alt="Close modal icon" />
+        </button>
+        <h2 id="modalTitle">
+          Contactez-moi<br />
+          <span>Mimi Keel</span>
+        </h2>
         <form>
-          <div aria-label="Contact form container">
-            <label>Prénom</label>
-            <input />
-          </div>
-          <button
-            aria-label="Contact form submit button"
-            class="contact_button"
-          >
-            Envoyer
-          </button>
+          <label for="prenom">Prénom</label>
+          <input type="text" id="prenom" name="prenom" required />
+
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Votre message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit" class="custom-button">Envoyer</button>
         </form>
       </div>
     </div>
     <script type="module" src="/scripts/pages/photographer.js"></script>
-    <script type="module" src="/scripts/utils/contactForm.js"></script>
   </body>
 </html>

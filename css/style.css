@@ -37,6 +37,19 @@ h1 {
   margin-left: 100px;
 }
 
+.custom-button {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  padding: 11px;
+  width: 170px;
+  height: 70px;
+  border: none;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .photographer_section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

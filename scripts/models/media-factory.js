@@ -3,7 +3,7 @@ import { Video } from "./video.js"
 
 export class MediasFactory {
   static create(media, photographer) {
-    return media.hasOwnProperty("image")
+    return Object.hasOwn(media, "image")
       ? new Picture(media, photographer)
       : new Video(media, photographer)
   }

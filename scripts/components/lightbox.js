@@ -49,7 +49,7 @@ export class LightboxComponent {
 
   renderLightboxMedia() {
     const media = this.medias[this.currentMediaIndex]
-    lightboxMediaContainer.innerHTML = media.lightboxTemplate
+    this.lightboxMediaContainer.innerHTML = media.lightboxTemplate
   }
 
   bindCloseButton() {

@@ -1,3 +1,4 @@
+import { ContactModal } from "../components/contact-modal.js"
 import { FilterComponent } from "../components/filter.js"
 import { LightboxComponent } from "../components/lightbox.js"
 import { MediasFactory } from "../models/media-factory.js"
@@ -7,6 +8,7 @@ import { getPhotographerById, getPhotographerMedias } from "../utils/data.js"
 class PortfolioPage {
   constructor() {
     new FilterComponent()
+    new ContactModal()
     this.getPhotographer().then((photographer) => {
       this.photographer = photographer
       this.getMedias().then((medias) => {
