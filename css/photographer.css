@@ -217,6 +217,7 @@ header > .logo {
   border-radius: 5px;
   padding: 2rem;
   position: relative;
+  overflow: auto;
   background-color: #db8876;
   width: 670px;
   height: 90%;
